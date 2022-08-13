@@ -22,6 +22,8 @@ class Blog extends Model
         'expired_at',
         'slug',
         'title',
+        'additional_content',
+        'featured_at'
         
     ];
 

@@ -183,6 +183,25 @@
                                         type="text"
                                     >{{ old('main_content') ?? ($blog->main_content ?? '') }}</textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label
+                                        for="additional_content"
+                                        class="form-control-label"
+                                    >
+                                        Additional Content
+                                    </label>
+                                    <input
+                                        id="additional_content"
+                                        class="form-control"
+                                        name="additional_content"
+                                        placeholder="Blog Title"
+                                        required
+                                        type="text"
+                                        value="{{ old('additional_content') ?? ($blog->additional_content ?? '')}}"
+                                    />
+                                </div>
+                            </div>
+                            
                             </div>
                             <!-- Card footer -->
                             <div class="card-footer py-4 text-right">
