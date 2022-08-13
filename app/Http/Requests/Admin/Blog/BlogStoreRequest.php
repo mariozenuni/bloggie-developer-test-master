@@ -37,6 +37,7 @@ class BlogStoreRequest extends FormRequest
     public function rules()
     {
         return [
+            'expired_at'    => ['nullable', 'date'],
             'featured_at'   => ['nullable', 'date'],
             'image_url'     => ['required', 'url'],
             'main_content'  => ['required'],
@@ -44,5 +45,6 @@ class BlogStoreRequest extends FormRequest
             'slug'          => ['required', 'min:3', 'max:255', 'unique:blogs'],
             'title'         => ['required', 'min:3', 'max:255'],
         ];
+
     }
 }

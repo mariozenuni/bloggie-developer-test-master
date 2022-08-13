@@ -19,8 +19,10 @@ class Blog extends Model
         'is_live',
         'main_content',
         'published_at',
+        'expired_at',
         'slug',
         'title',
+        
     ];
 
     /**
