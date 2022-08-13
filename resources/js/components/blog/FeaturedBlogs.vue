@@ -36,7 +36,7 @@
         },
         methods: {
             loadBlogs() {
-                axios.post(
+                axios.get(
                     '/api/blog/featured'
                 ).then(response => {
                     this.blogs = response.data;
