@@ -140,21 +140,20 @@
                                             />
                                         </div>
                                     </div>
-
                                     <div class="col-4">
                                         <div class="form-group">
                                             <label
-                                                for="expiry_date"
+                                                for="expired_at"
                                                 class="form-control-label"
                                             >
                                                 Expiry Date
                                             </label>
                                             <input
-                                                id="expiry_date"
+                                                id="expired_at"
                                                 class="form-control"
-                                                name="expiry_date"
+                                                name="expired_at"
                                                 type="datetime-local"
-                                                value="{{ old('expiry_date') }}"
+                                                value="{{ old('expired_at')}}"
                                             />
                                         </div>
                                     </div>
