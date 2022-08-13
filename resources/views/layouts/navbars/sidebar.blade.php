@@ -77,6 +77,15 @@
                         Blog Posts
                     </a>
                 </li>
+                     <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="{{ route('admin.reviews.index') }}"
+                    >
+                        <i class="ni ni-archive-2 text-green"></i>
+                        Blog Reviews
+                    </a>
+                </li>
 
                 <!-- TODO: Use this link when implementing testimonials
                 <li class="nav-item">

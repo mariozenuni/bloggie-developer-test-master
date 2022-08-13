@@ -33,4 +33,11 @@ Route::group([
         'update',
         'store'
     ]);
+    Route::resource('reviews', \App\Http\Controllers\Admin\ReviewsController::class)->only([
+        'create',
+        'edit',
+        'index',
+        'update',
+        'store'
+    ]);
 });
