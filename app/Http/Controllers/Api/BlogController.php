@@ -20,7 +20,7 @@ class BlogController extends Controller
             ->where(function ($subquery) use ($now) {
                 return $subquery->where('expired_at', '>', $now)->orWhereNull('expired_at');
             })
-            ->orderBy('published_at', 'desc')
+            ->orderBy('featured_at', 'desc')
             ->limit($request->get('limit', 3))
             ->get();
 
