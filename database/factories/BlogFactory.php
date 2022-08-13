@@ -23,12 +23,14 @@ class BlogFactory extends Factory
     public function definition()
     {
         $title = $this->faker->catchPhrase;
+        $additional_content = $this->faker->catchPhrase;
 
         return [
             'expired_at'    => $this->faker->boolean ? $this->faker->dateTimeBetween('-5 days', '+5 days') : null,
             'featured_at'   => $this->faker->boolean ? $this->faker->dateTimeBetween('-5 days', '+5 days') : null,
             'image_url'     => $this->faker->imageUrl(),
             'main_content'  => $this->faker->paragraphs(12, true),
+            'additional_content'  => $this->faker->boolean ? $additional_content : null,
             'published_at'  => $this->faker->boolean ? $this->faker->dateTimeBetween('-5 days', '+5 days') : null,
             'slug'          => Str::slug($title),
             'title'         => $title,
