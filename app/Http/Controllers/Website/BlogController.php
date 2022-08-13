@@ -12,13 +12,18 @@ class BlogController extends Controller
 
     public function index()
     {
-        $blogs = Blog::query()->paginate(12);
+        $now = Carbon::now();
+        $blogs = Blog::query()
+                ->whereNotNull('published_at')
+                ->where('published_at', '<=', $now)
+                ->orderBy('published_at', 'desc')
+                ->paginate(12);
 
         return view('website.blog.index')->with([
             'blogs' => $blogs
         ]);
     }
-
+    
     public function show(Blog $blog)
     {
         return view('website.blog.show')->with([
