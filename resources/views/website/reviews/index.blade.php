@@ -16,15 +16,15 @@
     </div>
 
     <div class="container my-4">
-        @foreach ($reviews as $review)
+        @foreach ($testimonials as $testimonial)
             <testimonial-card
                 class="mb-4 shadow-sm"
-                :testimonial="{{ json_encode($review->toArray()) }}"
+                :testimonial="{{ json_encode($testimonial->toArray()) }}"
             ></testimonial-card>
         @endforeach
 
         <div class="mt-6">
-            {{ $reviews->links() }}
+            {{ $testimonials->links() }}
         </div>
     </div>
 

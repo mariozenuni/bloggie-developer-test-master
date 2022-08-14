@@ -12,14 +12,14 @@ class ReviewsController extends Controller
     public function index()
     {
         $now = Carbon::now();
-        $reviews = Review::query()
+        $testimonials = Review::query()
                 ->whereNotNull('created_at')
                 ->where('created_at', '<=', $now)
                 ->orderBy('created_at', 'desc')
                 ->paginate(12);
 
         return view('website.reviews.index')->with([
-            'reviews' => $reviews
+            'testimonials' => $testimonials
         ]);
     }
     
