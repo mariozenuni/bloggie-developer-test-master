@@ -12,10 +12,10 @@ class BlogController extends Controller
 
     public function index()
     {
-        $now = Carbon::now();
+        $todayDate = date('Y-m-d');
         $blogs = Blog::select('blogs.*')
                 ->whereNotNull('published_at')
-                ->where('published_at', '<', $now)
+                ->where('published_at', '<',$todayDate)
                 ->orderBy('published_at', 'desc')
                 ->paginate(12);
 
