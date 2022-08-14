@@ -12,10 +12,10 @@ class ReviewsController extends Controller
 {
     public function latest(Request $request) : JsonResponse
     {
-        $now = Carbon::now();
+        $todayDate = date('Y-m-d');
         $testimonials = Review::select('reviews.*')
                  ->whereNotNull('created_at')
-                 ->where('created_at', '<', $now)
+                 ->where('created_at', '<', $todayDate)
                  ->limit($request->get('limit', 3))
                  ->get();
         return response()->json($testimonials);
