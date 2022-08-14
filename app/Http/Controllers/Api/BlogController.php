@@ -34,7 +34,8 @@ class BlogController extends Controller
                  ->whereNotNull('published_at')
                  ->where('published_at', '<', $todayDate)
                  ->where(function ($subquery) use ($todayDate) {
-                return $subquery->where('expired_at', '>', $todayDate)->orWhereNull('expired_at');
+                return $subquery->where('expired_at', '>', $todayDate)
+                ->orWhereNull('expired_at');
             })
              ->orderBy('published_at','desc')
             ->limit($request->get('limit', 3))
