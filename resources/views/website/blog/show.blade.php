@@ -34,6 +34,9 @@
         <p class="py-4">
             {{ $blog->main_content }}
         </p>
+          <p class="py-4">
+            {{ $blog->additional_content}}  
+        </p>
     </div>
 
     <featured-blogs></featured-blogs>

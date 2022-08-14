@@ -14,7 +14,6 @@ class BlogController extends Controller
     public function featured(Request $request) : JsonResponse
     {
         $now = Carbon::now();
-
         $blogs = Blog::select('blogs.*')
            ->whereNotNull(['published_at','featured_at'])
             ->where('published_at', '<', $now)
@@ -25,7 +24,6 @@ class BlogController extends Controller
             ->orderBy('featured_at', 'desc')
             ->limit($request->get('limit', 3))
             ->get();
-
         return response()->json($blogs);
     }
 
@@ -41,7 +39,6 @@ class BlogController extends Controller
             ->orderBy('published_at', 'desc')
             ->limit($request->get('limit', 3))
             ->get();
-
         return response()->json($blogs);
     }
 

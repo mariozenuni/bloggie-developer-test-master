@@ -21,7 +21,7 @@
 
         <a
             class="btn btn-primary mt-4"
-            :href="`/blog/${blog.slug}`"
+            :href="`/blog/${blog.id}`"
         >
             View Blog
         </a>

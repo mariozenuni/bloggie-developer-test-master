@@ -37,7 +37,7 @@
         methods: {
             loadBlogs() {
                 axios.get(
-                    '/api/blog/featured'
+                    '/api/blog/featured?limit=3'
                 ).then(response => {
                     this.blogs = response.data;
                 }).catch(e => {
