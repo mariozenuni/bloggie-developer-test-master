@@ -16,6 +16,9 @@
                 <p>
                     {{ blog.main_content.substr(0, 80).trim() }}...
                 </p>
+                 <p>
+                    {{ blog.additional_content.substr(0, 80).trim()}}...
+                </p>
 
                 <small class="block w-100">
                     <template v-if="isFeatured">

@@ -7,8 +7,9 @@
 
             <div class="row">
                 <div
-                    v-for="blog in blogs"
+                    v-for="blog in blogs" 
                     class="col-4 mb-4"
+                    :key = "blog.latest"
                 >
                     <blog-card :blog="blog" />
                 </div>

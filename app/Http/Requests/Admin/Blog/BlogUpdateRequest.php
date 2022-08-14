@@ -42,6 +42,7 @@ class BlogUpdateRequest extends FormRequest
             'featured_at'   => ['nullable', 'date'],
             'image_url'     => ['required', 'url'],
             'main_content'  => ['required'],
+            'additional_content' => ['nullable'],
             'published_at'  => ['nullable', 'date'],
             'slug'          => ['required', 'min:3', 'max:255', Rule::unique('blogs')->ignore($this->blog->id)],
             'title'         => ['required', 'min:3', 'max:255'],
