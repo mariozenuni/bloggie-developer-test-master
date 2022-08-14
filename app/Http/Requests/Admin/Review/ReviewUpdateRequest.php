@@ -26,7 +26,7 @@ class ReviewUpdateRequest extends FormRequest
         return [
             'user_name'    => ['required'],
             'message'      => ['required'],
-            'rating'     => ['required']
+            'rating'     => ['required','numeric','between:0,5']
         ];
     }
 }   
