@@ -18,6 +18,7 @@ Route::get('/blog', [\App\Http\Controllers\Website\BlogController::class, 'index
 //Route::get('/blog/{blog:slug}', [\App\Http\Controllers\Website\BlogController::class, 'show']);
 Route::get('/blog/{blog:id}', [\App\Http\Controllers\Website\BlogController::class, 'show']);
 
+Route::get('/what-our-customers-say-about-us', [\App\Http\Controllers\Website\ReviewsController::class, 'index'])->name('website.reviews.index');
 
 /** Admin Routes */
 Route::group([

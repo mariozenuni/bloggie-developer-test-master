@@ -33,6 +33,11 @@
                         <span class="nav-link-inner--text">{{ __('Blog Posts') }}</span>
                     </a>
                 </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-link-icon" href="{{ route('website.reviews.index') }}">
+                        <span class="nav-link-inner--text">{{ __('Reviews') }}</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
