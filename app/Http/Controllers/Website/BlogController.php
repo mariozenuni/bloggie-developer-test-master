@@ -13,9 +13,9 @@ class BlogController extends Controller
     public function index()
     {
         $now = Carbon::now();
-        $blogs = Blog::query()
+        $blogs = Blog::select('blogs.*')
                 ->whereNotNull('published_at')
-                ->where('published_at', '<=', $now)
+                ->where('published_at', '<', $now)
                 ->orderBy('published_at', 'desc')
                 ->paginate(12);
 
