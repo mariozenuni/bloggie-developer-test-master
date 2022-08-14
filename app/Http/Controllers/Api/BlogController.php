@@ -43,4 +43,5 @@ class BlogController extends Controller
             ->get();
         return response()->json($blogs);
     }
+
 }
