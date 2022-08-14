@@ -83,7 +83,9 @@
                         href="{{ route('admin.reviews.index') }}"
                     >
                         <i class="ni ni-archive-2 text-green"></i>
-                        Blog Reviews
+
+                        Reviews
+
                     </a>
                 </li>
 
