@@ -187,7 +187,7 @@
                                         id="additional_content"
                                         class="form-control"
                                         name="additional_content"
-                                        placeholder="Blog Title"
+                                        placeholder="Additional Content"
                                         required
                                         type="text"
                                         value="{{ old('additional_content') }}"
