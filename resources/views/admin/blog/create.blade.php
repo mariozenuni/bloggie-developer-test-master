@@ -170,6 +170,7 @@
                                         id="main_content"
                                         class="form-control"
                                         name="main_content"
+                                        placeholder="Main Content"
                                         required
                                         rows="5"
                                         type="text"
