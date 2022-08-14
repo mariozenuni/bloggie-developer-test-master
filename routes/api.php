@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/blog/featured', [\App\Http\Controllers\Api\BlogController::class, 'featured']);
 Route::get('/blog/latest', [\App\Http\Controllers\Api\BlogController::class, 'latest']);
+Route::get('/testimonial/latest', [\App\Http\Controllers\Api\ReviewsController::class, 'latest']);
