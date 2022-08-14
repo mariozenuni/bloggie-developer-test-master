@@ -17,6 +17,7 @@ class BlogController extends Controller
         $blogs = Blog::select('blogs.*')
            ->whereNotNull(['published_at','featured_at'])
             ->where('published_at', '<', $todayDate)
+            ->where('featured_at', '>=',  'published_at') 
             ->where('featured_at', '<',  $todayDate)
             ->where(function ($subquery) use ( $todayDate) {
                 return $subquery->where('expired_at', '>', $todayDate)
