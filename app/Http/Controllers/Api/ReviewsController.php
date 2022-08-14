@@ -16,6 +16,7 @@ class ReviewsController extends Controller
         $testimonials = Review::select('reviews.*')
                  ->whereNotNull('created_at')
                  ->where('created_at', '<', $todayDate)
+
                  ->limit($request->get('limit', 3))
                  ->get();
         return response()->json($testimonials);
