@@ -2,7 +2,7 @@
     <div class="bg-lighter py-5">
         <div class="container">
             <h3 class="mb-4 text-lg">
-                Latest Testimonial
+                Latest Testimonials
             </h3>
 
             <div class="row">

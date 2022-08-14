@@ -36,11 +36,11 @@ class BlogController extends Controller
                  ->where(function ($subquery) use ($todayDate) {
                 return $subquery->where('expired_at', '>', $todayDate)
                 ->orWhereNull('expired_at');
+
             })
              ->orderBy('published_at','desc')
             ->limit($request->get('limit', 3))
             ->get();
         return response()->json($blogs);
     }
-
 }
