@@ -31,7 +31,7 @@ class ReviewsController extends Controller
                      $reviews->where('message', 'like', '%' . $request->get('search') . '%');
                  }
                    $reviews = $reviews
-                      ->orderBy('message', 'asc')
+                      ->orderBy('id', 'asc')
                       ->paginate(12);
              
                    return view('admin.reviews.index')->with([
