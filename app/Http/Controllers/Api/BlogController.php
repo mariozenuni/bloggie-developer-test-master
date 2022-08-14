@@ -14,7 +14,10 @@ class BlogController extends Controller
     public function featured(Request $request) : JsonResponse
     {
         $now = Carbon::now();
-        $blogs = Blog::select('blogs*')
+
+        $blogs = Blog::select('blogs.*')
+
+
            ->whereNotNull(['published_at','featured_at'])
             ->where('published_at', '<', $now)
             ->where('featured_at', '<', $now)
