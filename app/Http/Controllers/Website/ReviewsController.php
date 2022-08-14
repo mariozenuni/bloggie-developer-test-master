@@ -11,10 +11,10 @@ class ReviewsController extends Controller
 
     public function index()
     {
-        $now = Carbon::now();
-        $testimonials = Review::query()
+        $todayDate = date('Y-m-d');
+        $testimonials = Review::select('reviews.*')
                 ->whereNotNull('created_at')
-                ->where('created_at', '<=', $now)
+                ->where('created_at', '<', $todayDate)
                 ->orderBy('created_at', 'desc')
                 ->paginate(12);
 

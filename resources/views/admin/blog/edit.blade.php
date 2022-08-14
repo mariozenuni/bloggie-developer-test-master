@@ -178,6 +178,7 @@
                                         id="main_content"
                                         class="form-control"
                                         name="main_content"
+                                        placeholder="Main Content"
                                         required
                                         rows="5"
                                         type="text"
@@ -194,7 +195,9 @@
                                         id="additional_content"
                                         class="form-control"
                                         name="additional_content"
-                                        placeholder="Blog Title"
+
+                                        placeholder="Additional Content"
+
                                         required
                                         type="text"
                                         value="{{ old('additional_content') ?? ($blog->additional_content ?? '')}}"
