@@ -14,16 +14,16 @@ class BlogController extends Controller
     public function featured(Request $request) : JsonResponse
     {
         $now = Carbon::now();
-        $blogs = Blog::whereNotNull('featured_at')
-            ->where('featured_at', '<=', $now)
-            ->where('published_at', '<=', $now)
+        $blogs = Blog::select('blogs.*')
+           ->whereNotNull(['published_at','featured_at'])
+            ->where('published_at', '<', $now)
+            ->where('featured_at', '<', $now)
             ->where(function ($subquery) use ($now) {
                 return $subquery->where('expired_at', '>', $now)->orWhereNull('expired_at');
             })
-            ->orderBy('published_at', 'desc')
+            ->orderBy('featured_at', 'desc')
             ->limit($request->get('limit', 3))
             ->get();
-
         return response()->json($blogs);
     }
 
@@ -36,12 +36,12 @@ class BlogController extends Controller
                  ->where(function ($subquery) use ($todayDate) {
                 return $subquery->where('expired_at', '>', $todayDate)
                 ->orWhereNull('expired_at');
+
             })
              ->orderBy('published_at','desc')
             ->limit($request->get('limit', 3))
             ->get();
         return response()->json($blogs);
     }
-    
 
 }

@@ -22,6 +22,7 @@ class CreateBlogsTable extends Migration
             $table->dateTime('published_at')->nullable();
             $table->dateTime('featured_at')->nullable();
             $table->dateTime('expired_at')->nullable();
+            $table->string('additional_content')->nullable();
             $table->timestamps();
         });
     }

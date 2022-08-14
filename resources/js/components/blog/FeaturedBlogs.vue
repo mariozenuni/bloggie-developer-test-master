@@ -36,8 +36,8 @@
         },
         methods: {
             loadBlogs() {
-                axios.post(
-                    '/api/blog/featured'
+                axios.get(
+                    '/api/blog/featured?limit=3'
                 ).then(response => {
                     this.blogs = response.data;
                 }).catch(e => {
