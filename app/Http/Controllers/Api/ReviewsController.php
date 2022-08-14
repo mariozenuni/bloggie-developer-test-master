@@ -13,11 +13,11 @@ class ReviewsController extends Controller
     public function latest(Request $request) : JsonResponse
     {
         $now = Carbon::now();
-        $testimonials = Review::whereNotNull('created_at')
-                 ->where('created_at', '<=', $now)
-            ->orderBy('created_at', 'desc')
-            ->limit($request->get('limit', 3))
-           ->get();
+        $testimonials = Review::select('reviews.*')
+                 ->whereNotNull('created_at')
+                 ->where('created_at', '<', $now)
+                 ->limit($request->get('limit', 3))
+                 ->get();
         return response()->json($testimonials);
     }
 
